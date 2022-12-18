@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300&family=Rubik+80s+Fade&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="myscript.js" defer></script>
 </head>
@@ -17,16 +20,17 @@
             </a>
         </div>
         <div class="credit">
-            Photo by <a href="https://unsplash.com/@kellysikkema" class="credit-link">Kelly Sikkema</a>
+            Photo by <a href="https://unsplash.com/@kellysikkema" alt="A form with a pen." class="credit-link">Kelly Sikkema</a>
             on <a href="https://unsplash.com" class="credit-link">Unsplash</a>
         </div>
     </div>
     <div class="mainbar">
-        <p>This is not a real form.
-        Thanks for coming to look at it though.</p>
-        <form>
+        <header><h1>Sign-up Form</h1></header>
+        <main>
+        <form id="sign-up">
             <fieldset>
-                <legend>Sign up</legend>
+                <legend>Fill out your information here.</legend>
+                <div class="names">
                     <label for="first-name">First Name:
                     </label>
                     <input type="text" id="first-name"
@@ -35,42 +39,50 @@
                     </label>
                     <input type="text" id="last-name"
                     name="last-name">
+                </div>
+                <div class="emailPhone">
                     <label for="email">Email:</label>
                     <input type="email" id="email"
-                    name="email">
+                    name="email" required aria-required="true">
                     <label for="phone">Phone Number:
                     </label>
-                    <input type="tel" id="phone"
+                    <input type="number" id="phone"
                     name="phone">
+                </div>
+                <div class="passwords">
                     <label for="password">Password:
                     </label>
                     <input type="password" id="password"
-                    name="password" required>
+                    name="password" required aria-required="true">
                     <label for="confirm-password">
                     Confirm Password:</label>
                     <input type="password"
                     id="confirm-password"
-                    name="confirm-password" required>
+                    name="confirm-password" required aria-required="true">
+                </div>
             </fieldset>
-            <label for="create-account">
-                Create Account</label>
-            <input type="submit" id="create-account"
-            name="create-account">
         </form>
+        <div class="create-container">
+            <label for="create-account">
+                <input type="submit" id="create-account"
+                name="create-account" form="sign-up" value="Create Account">
+            </label>
+        </div>
+        </main>
         <footer>
             <p>Already have an account? 
             <a href="#" id="login-link">Log in</a>
             </p>
 
             <form id="login-form">
-                <label for="username">Username:
+                <label for="username" id="userlabel">Username:
                 </label>
                 <input type="text" id="username"
-                name="username">
+                name="username"><br>
                 <label for="password">Password:
                 </label>
                 <input type="text" id="password"
-                name="password">
+                name="password"><br>
                 <input type="submit" value="Log In">
             </form>
         </footer>
