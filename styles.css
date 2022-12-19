@@ -50,7 +50,7 @@ legend{
   }
 
 input[type="text"], input[type="email"],
-input[type="password"], input[type="number"]{
+input[type="password"], input[type="tel"]{
   font: 1em 'Hanken Grotesk', sans-serif;
 
   /* Uniform text field size */
@@ -66,6 +66,11 @@ label[for="password"]:before,
 label[for="confirm-password"]:before{
     content: "* ";
     color: red;
+  }
+
+  input[type="email"]:invalid, input[type="password"]:invalid
+  , input[type="confirm-password"]:invalid{
+    border: 1px solid red;
   }
 
   input[type="email"]:valid, input[type="password"]:valid
@@ -101,10 +106,6 @@ footer {
     margin-left: 30px;
 }
 
-#password, #confirm-password{
-
-}
-
 .sidebar{
     display: flex;
     flex-direction: column;
@@ -113,6 +114,18 @@ footer {
     background-size: cover;
     height: 100vh;
     width: 30rem;
+}
+
+#password-requirements{
+    padding: 10px;
+    padding-top: 20px;
+    font-size: 20px;
+}
+
+#confirm-requirements{
+    padding: 10px;
+    padding-top: 20px;
+    font-size: 20px;
 }
 
 #login-form {
